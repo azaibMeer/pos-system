@@ -78,6 +78,6 @@
         <script src="{{url('/assets/js/app.bundle.js')}}"></script>
         <script src="{{url('/assets/js/notifications/toastr/toastr.js')}}"></script>
         <!-- Page related scripts -->
-        @include('errors.toastr')
+        @include('scripts.toastr')
     </body>
 </html>
