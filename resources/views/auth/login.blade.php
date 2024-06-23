@@ -21,6 +21,7 @@
         <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
         <!-- Optional: page related CSS-->
         <link rel="stylesheet" media="screen, print" href="{{url('/assets/css/page-login-alt.css')}}">
+        <link rel="stylesheet" media="screen, print" href="/assets/css/notifications/toastr/toastr.css">
     </head>
     <body>
         <div class="blankpage-form-field">
@@ -75,6 +76,8 @@
        
         <script src="{{url('/assets/js/vendors.bundle.js')}}"></script>
         <script src="{{url('/assets/js/app.bundle.js')}}"></script>
+        <script src="{{url('/assets/js/notifications/toastr/toastr.js')}}"></script>
         <!-- Page related scripts -->
+        @include('errors.toastr')
     </body>
 </html>
