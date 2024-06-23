@@ -1,20 +1,26 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Auth;
-// use Illuminate\Support\Facades\Hash;
+
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Outlet;
 
-
-class AuthController extends Controller
+class PosController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        if(session()->has('outlet_id')){
+            return view('main.pos');
+        }else{
+
+            $data['outlets'] = Outlet::where('status', 1)->get();
+            return view('main.choose_outlet',$data);
+            
+        }
+        
     }
 
     /**
@@ -22,33 +28,7 @@ class AuthController extends Controller
      */
     public function create()
     {
-        return view('auth.login');
-    }
-
-    /**
-     * Authenticate the users.
-     */
-    public function authenticate(Request $request){
-
-        $request->validate([
-            'email' => 'required',
-            'password' => 'required'
-           
-        ]);
-
-        $credentials = $request->only('email', 'password');
-        if(Auth::attempt($credentials)) 
-        {
-            $user = Auth::User();
-            return redirect('/pos');
-        }
-
-        else
-            {
-                return redirect()->back()
-                ->with('error','Credentials are Incorrect');
-            }
-            
+        //
     }
 
     /**
@@ -56,7 +36,7 @@ class AuthController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+        //
     }
 
     /**

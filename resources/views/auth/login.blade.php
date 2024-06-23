@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>
-            Login - - SmartAdmin v4.4.1
+            Login
         </title>
         <meta name="description" content="Login">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,15 +21,14 @@
         <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
         <!-- Optional: page related CSS-->
         <link rel="stylesheet" media="screen, print" href="{{url('/assets/css/page-login-alt.css')}}">
-        <link rel="stylesheet" media="screen, print" href="/assets/css/notifications/toastr/toastr.css">
+        <link rel="stylesheet" media="screen, print" href="{{url('/assets/css/notifications/toastr/toastr.css')}}">
     </head>
     <body>
         <div class="blankpage-form-field">
             <div class="page-logo m-0 w-100 align-items-center justify-content-center rounded border-bottom-left-radius-0 border-bottom-right-radius-0 px-4">
                 <a href="javascript:void(0)" class="page-logo-link press-scale-down d-flex align-items-center">
-                    <img src="img/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
-                    <span class="page-logo-text mr-1">SmartAdmin WebApp</span>
-                    <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>
+                    <img src="{{url($setting->logo)}}" alt="{{$setting->name}}" aria-roledescription="logo">
+                    <span class="page-logo-text mr-1">{{$setting->name ?? ''}}</span>
                 </a>
             </div>
             <div class="card p-4 border-top-left-radius-0 border-top-right-radius-0">
@@ -38,16 +37,20 @@
                     <div class="form-group">
                         <label class="form-label" for="username">Username</label>
                         <input type="email" id="username" name="email" class="form-control" placeholder="your id or email" value="admin@admin.com">
-                        <span class="help-block">
-                            Your unique username to app
+                        @error('email')
+                        <span class="help-block text-danger">
+                        Please Enter Email
                         </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="password">Password</label>
                         <input type="password" id="password" name="password" class="form-control" placeholder="password" value="123456789">
-                        <span class="help-block">
-                            Your password
+                        @error('password')
+                        <span class="help-block text-danger">
+                        Please Enter Password
                         </span>
+                        @enderror
                     </div>
                    {{-- <div class="form-group text-left">
                         <div class="custom-control custom-checkbox">

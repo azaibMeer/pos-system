@@ -2,8 +2,8 @@
 <aside class="page-sidebar">
                     <div class="page-logo">
                         <a href="#" class="page-logo-link press-scale-down d-flex align-items-center position-relative" data-toggle="modal" data-target="#modal-shortcut">
-                            <img src="/assets/img/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
-                            <span class="page-logo-text mr-1">SmartAdmin WebApp</span>
+                            <img src="{{url($setting->logo)}}" alt="{{$setting->name}}" aria-roledescription="logo">
+                            <span class="page-logo-text mr-1">{{$setting->name ?? ''}}</span>
                         </a>
                     </div>
                     <!-- BEGIN PRIMARY NAVIGATION -->
