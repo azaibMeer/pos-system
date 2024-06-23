@@ -1,7 +1,5 @@
 @extends('layouts.master')
-@section('content')
-<main id="js-page-content" role="main" class="page-content">
-    
+@section('content') 
                         <ol class="breadcrumb page-breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0);">SmartAdmin</a></li>
                             <li class="breadcrumb-item">category_1</li>
@@ -63,7 +61,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </main>
+                        </div> 
 
                     @endsection

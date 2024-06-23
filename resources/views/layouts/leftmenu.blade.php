@@ -43,6 +43,25 @@
                                     
                                 </ul>
                             </li>
+                            <li>
+                                <a href="#" title="Tables" data-filter-tags="tables">
+                                    <i class="fal fa-th-list"></i>
+                                    <span class="nav-link-text" data-i18n="nav.tables">Customer</span>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="{{url('/customer/list')}}" title="Basic Tables">
+                                            <span class="nav-link-text" >List</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('/customer/create')}}" title="Basic Tables">
+                                            <span class="nav-link-text" >Add</span>
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
                 </aside>
