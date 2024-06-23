@@ -32,17 +32,18 @@
                 </a>
             </div>
             <div class="card p-4 border-top-left-radius-0 border-top-right-radius-0">
-                <form action="intel_analytics_dashboard.html">
+                <form method="post" action="{{('/authenticate')}}">
+                    @csrf
                     <div class="form-group">
                         <label class="form-label" for="username">Username</label>
-                        <input type="email" id="username" class="form-control" placeholder="your id or email" value="drlantern@gotbootstrap.com">
+                        <input type="email" id="username" name="email" class="form-control" placeholder="your id or email" value="admin@admin.com">
                         <span class="help-block">
                             Your unique username to app
                         </span>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="password">Password</label>
-                        <input type="password" id="password" class="form-control" placeholder="password" value="password123">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="password" value="123456789">
                         <span class="help-block">
                             Your password
                         </span>
@@ -60,14 +61,14 @@
                 <a href="#"><strong>Recover Password</strong></a> | <a href="#"><strong>Register Account</strong></a>
             </div>
         </div>
-        <div class="login-footer p-2">
+        {{--<div class="login-footer p-2">
             <div class="row">
                 <div class="col col-sm-12 text-center">
                     <i><strong>System Message:</strong> You were logged out from 198.164.246.1 on Saturday, March, 2017 at 10.56AM</i>
                 </div>
             </div>
         </div>
-        {{--<video poster="/assets/img/backgrounds/clouds.png" id="bgvid" playsinline autoplay muted loop>
+        <video poster="/assets/img/backgrounds/clouds.png" id="bgvid" playsinline autoplay muted loop>
             <source src="/assets/media/video/cc.webm" type="video/webm">
             <source src="/assets/media/video/cc.mp4" type="video/mp4">
         </video>--}}
