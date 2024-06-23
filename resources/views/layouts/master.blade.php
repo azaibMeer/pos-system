@@ -19,6 +19,7 @@
         <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
         <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="stylesheet" media="screen, print" href="{{url('/assets/css/datagrid/datatables/datatables.bundle.css')}}">
         <!--<link rel="stylesheet" media="screen, print" href="css/your_styles.css">-->
     </head>
     <body class="mod-bg-1 ">
@@ -705,6 +706,7 @@
         <!-- END Page Settings -->
         <script src="{{url('/assets/js/vendors.bundle.js')}}"></script>
         <script src="{{url('/assets/js/app.bundle.js')}}"></script>
-        
+        <script src="{{url('/assets/js/datagrid/datatables/datatables.bundle.js')}}"></script>
+        <script src="{{url('/assets/js/datagrid/datatables/datatables.export.js')}}"></script>
     </body>
 </html>
