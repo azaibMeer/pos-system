@@ -35,13 +35,13 @@ class CustomerController extends Controller
         // dd($request);
         $request->validate([
             'name' => 'required', 
+            'email' => 'required', 
            ]);
 
          $customer = new Customer; 
          $customer->name = $request->name;
          $customer->email = $request->email;
-         $customer->phone = $request->mobile;
-         $customer->cnic = $request->cnic;
+         $customer->phone = $request->phone; 
          $customer->created_user_id = auth()->id();
          $customer->save(); 
 
