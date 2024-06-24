@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content')
-<main id="js-page-content" role="main" class="page-content">
+
                         
 <div class="subheader">
     <h1 class="subheader-title">
@@ -34,5 +34,5 @@
         </div>
     </div>
 </div>
-</main>
+
 @endsection
