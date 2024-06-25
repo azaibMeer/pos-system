@@ -58,8 +58,8 @@
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label" for="validationCustom03">Status <span class="text-danger">*</span></label>
                                     <select class="form-control" id="status" name="status">
-                                        <option value="1">Active</option> 
-                                        <option value="0">InActive</option> 
+                                          <option value="1" {{ $outlets->status == 1 ? 'selected' : '' }}>Active</option>
+                                          <option value="0" {{ $outlets->status == 0 ? 'selected' : '' }}>Inactive</option>
                                     </select>
                                     <div class="invalid-feedback">
                                         Please provide a valid status.
