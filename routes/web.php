@@ -17,15 +17,15 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/pos', [PosController::class, 'index']);
 Route::get('/outletupdate/{id}', [OutletController::class, 'outletupdate']);
 
-// category routes
+// Category routes
 Route::get('/category/list', [CategoryController::class, 'show']);
 Route::get('/category/edit/{id}', [CategoryController::class, 'edit']);
 Route::post('/category/update/{id}', [CategoryController::class, 'update']);
 Route::get('/category/delete/{id}', [CategoryController::class, 'destroy']);
 Route::get('/category/add/', [CategoryController::class, 'create']);
 Route::post('/category/store/', [CategoryController::class, 'store']);
-Route::get('category/active/{id}', [CategoryController::class, 'active']);
-Route::get('category/inactive/{id}', [CategoryController::class, 'inactive']);
+Route::get('/category/active/{id}', [CategoryController::class, 'active']);
+Route::get('/category/inactive/{id}', [CategoryController::class, 'inactive']);
 
 // Customer route
 Route::get('/customer/list', [CustomerController::class,'index']);
@@ -42,7 +42,10 @@ Route::post('/outlet/store', [OutletController::class,'store']);
 Route::get('/outlet/edit/{id}', [OutletController::class,'edit']);
 Route::post('/outlet/update/{id}', [OutletController::class,'update']); 
 Route::get('/outlet/delete/{id}' , [OutletController::class , 'destroy']);
+Route::get('/outlet/active/{id}', [OutletController::class, 'active']);
+Route::get('/outlet/inactive/{id}', [OutletController::class, 'inactive']);
 
+// Logout route
 Route::get('/logout', function(Request $request) {
     Auth::logout();
     Session::flush();

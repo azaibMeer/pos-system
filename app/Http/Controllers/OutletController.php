@@ -104,4 +104,21 @@ class OutletController extends Controller
         $outlet->delete();
         return redirect('/outlet/list')->with('error', 'Outlet deleted successfully.');
     }
+
+    public function active($id)
+    {    
+        $active = Outlet::find($id);
+        $active->status = 1;
+        $active->save();
+        return redirect('/outlet/list')->with('message','Outlet active successfully.');
+    }
+
+     public function inactive($id)
+    {    
+        $inactive = Outlet::find($id);
+        $inactive->status = 0;
+        $inactive->save(); 
+        return redirect('/outlet/list')->with('error','Outlet inactive successfully.');
+    }
+
 }

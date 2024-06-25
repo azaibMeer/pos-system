@@ -47,6 +47,11 @@
 	                                <a href="{{url('/outlet/delete/'.$list->id)}}" class="btn btn-primary btn-sm btn-icon waves-effect waves-themed" onclick="return confirm('Are you sure you want to delete this oulet?')" title="Delete Outlet">
 	                                    <i class="fal fa-trash"></i>
 	                                </a> 
+                                   @if($list->status == 0)
+                                    <a href="{{ url('/outlet/active', ['outlet' => $list->id]) }}" class="btn btn-primary btn-sm btn-icon waves-effect waves-themed" title="inactive"><i class="fal fa-times-circle text-white"></i></a>
+                                    @elseif($list->status == 1)
+                                    <a href="{{ url('/outlet/inactive', ['outlet' => $list->id]) }}" class="btn btn-primary btn-sm btn-icon waves-effect waves-themed" title="active"><i class="fal fa-check-circle text-white "></i></a>
+                                    @endif
                                 </td> 
                             </tr> 
                         	@endforeach

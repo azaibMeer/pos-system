@@ -42,8 +42,7 @@ class CategoryController extends Controller
         ];
 
         Category::create($data);
-        return redirect('/category/list')
-        ->with('message','Category Add Success');
+        return redirect('/category/list')->with('message','Category add successfully.');
     }
 
     /**
@@ -74,8 +73,7 @@ class CategoryController extends Controller
             'name' => $request->name,
             'status' => $request->status,
         ]);
-        return redirect('/category/list')
-        ->with('message','Category Updated Success');
+        return redirect('/category/list')->with('message','Category update successfully.');
     }
 
     /**
@@ -85,8 +83,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
-        return redirect('/category/list')
-        ->with('message','Category Deleted Success');
+        return redirect('/category/list')->with('message','Category deleted successfully.');
     }
 
     public function active($id)
@@ -94,8 +91,7 @@ class CategoryController extends Controller
         $active = Category::find($id);
         $active->status = 1;
         $active->save();
-        return redirect('/category/list')
-        ->with('message','Category Active Success');
+        return redirect('/category/list')->with('message','Category active successfully.');
     }
 
      public function inactive($id)
@@ -103,7 +99,6 @@ class CategoryController extends Controller
         $inactive = Category::find($id);
         $inactive->status = 0;
         $inactive->save(); 
-        return redirect('/category/list')
-        ->with('error','Category Inactive Success');
+        return redirect('/category/list')->with('error','Category inactive successfully.');
     }
 }
