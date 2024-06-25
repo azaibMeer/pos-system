@@ -22,6 +22,10 @@ Route::get('/category/list', [CategoryController::class, 'show']);
 Route::get('/category/edit/{id}', [CategoryController::class, 'edit']);
 Route::post('/category/update/{id}', [CategoryController::class, 'update']);
 Route::get('/category/delete/{id}', [CategoryController::class, 'destroy']);
+Route::get('/category/add/', [CategoryController::class, 'create']);
+Route::post('/category/store/', [CategoryController::class, 'store']);
+Route::get('category/active/{id}', [CategoryController::class, 'active']);
+Route::get('category/inactive/{id}', [CategoryController::class, 'inactive']);
 
 // Customer route
 Route::get('/customer/list', [CustomerController::class,'index']);

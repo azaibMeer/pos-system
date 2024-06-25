@@ -20,7 +20,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        
+        return view('main.category.create');
     }
 
     /**
@@ -28,7 +28,22 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $request->validate([
+            'name' => 'unique:categories'
+        ]);
+
+        $userId = Auth()->id();
+
+        $data = [
+            'name' => $request->name,
+            'status' => $request->status,
+            'created_user_id' => $userId,
+        ];
+
+        Category::create($data);
+        return redirect('/category/list')
+        ->with('message','Category Add Success');
     }
 
     /**
@@ -72,5 +87,23 @@ class CategoryController extends Controller
         $category->delete();
         return redirect('/category/list')
         ->with('message','Category Deleted Success');
+    }
+
+    public function active($id)
+    {    
+        $active = Category::find($id);
+        $active->status = 1;
+        $active->save();
+        return redirect('/category/list')
+        ->with('message','Category Active Success');
+    }
+
+     public function inactive($id)
+    {    
+        $inactive = Category::find($id);
+        $inactive->status = 0;
+        $inactive->save(); 
+        return redirect('/category/list')
+        ->with('error','Category Inactive Success');
     }
 }
