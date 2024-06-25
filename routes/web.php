@@ -26,6 +26,14 @@ Route::get('/customer/edit/{id}', [CustomerController::class,'edit']);
 Route::post('/customer/update/{id}', [CustomerController::class,'update']); 
 Route::get('/customer/delete/{id}' , [CustomerController::class , 'destroy']);
 
+// Outlet route
+Route::get('/outlet/list', [OutletController::class,'index']);
+Route::get('/outlet/create', [OutletController::class,'create']);
+Route::post('/outlet/store', [OutletController::class,'store']);
+Route::get('/outlet/edit/{id}', [OutletController::class,'edit']);
+Route::post('/outlet/update/{id}', [OutletController::class,'update']); 
+Route::get('/outlet/delete/{id}' , [OutletController::class , 'destroy']);
+
 Route::get('/logout', function(Request $request) {
     Auth::logout();
     Session::flush();

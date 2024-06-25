@@ -35,7 +35,7 @@ class CustomerController extends Controller
         // dd($request);
         $request->validate([
             'name' => 'required', 
-            'email' => 'required', 
+            'phone' => 'required', 
            ]);
 
          $customer = new Customer; 
@@ -45,7 +45,7 @@ class CustomerController extends Controller
          $customer->created_user_id = auth()->id();
          $customer->save(); 
 
-         return redirect(url('/customer/list'))->with('success', 'Customer add successfully.'); 
+         return redirect(url('/customer/list'))->with('message', 'Customer add successfully.'); 
 
     }
 
@@ -60,24 +60,40 @@ class CustomerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+          $data ['customers'] = Customer::where('id',$id)->first();
+          return view('main.customer.edit',$data);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+         // dd($request);
+        $request->validate([
+            'name' => 'required', 
+            'phone' => 'required', 
+           ]);
+
+         $customer = Customer::find($id); 
+         $customer->name = $request->name;
+         $customer->email = $request->email;
+         $customer->phone = $request->phone; 
+         $customer->created_user_id = auth()->id();
+         $customer->save(); 
+
+         return redirect(url('/customer/list'))->with('message', 'Customer update successfully.'); 
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $customer = Customer::find($id); 
+        $customer->delete();
+        return redirect('/customer/list')->with('message', 'Customer deleted successfully.');
     }
 }

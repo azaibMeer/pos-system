@@ -5,10 +5,10 @@
         <div id="panel-1" class="panel">
             <div class="panel-hdr">
                 <h2>
-                    Customer List
+                    Outlet List
                 </h2>
                 <div class="panel-toolbar">
-                    <a href="{{url('/customer/create')}}" class="btn btn-sm btn-primary waves-effect waves-themed" type="submit">Customer Add</a> 
+                    <a href="{{url('/outlet/create')}}" class="btn btn-sm btn-primary waves-effect waves-themed" type="submit">Outlet Add</a> 
                 </div>
             </div>
             <div class="panel-container show">
@@ -20,28 +20,33 @@
                             <tr>
                                 <th>Id</th>
                                 <th>Name</th>
-                                <th>Email</th>
+                                <th>Address</th>
                                 <th>Phone</th>
+                                <th>Status</th> 
                                 <th>Action</th> 
                             </tr>
                         </thead>
                         <tbody>
-                        	@foreach ($customers as $key => $list)
+                        	@foreach ($outlets as $key => $list)
                             <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$list->name}}</td>
-                                <td>{{$list->email}}</td>
+                                <td>{{$list->address}}</td>
                                 <td>{{$list->phone}}</td>
                                 <td>
-                                	<a href="{{url('/customer/edit/'.$list->id)}}" class="btn btn-primary btn-sm btn-icon waves-effect waves-themed" title="Edit Customer">
-	                                    <i class="fal fa-pencil"></i>
+                                    @if($list->status == 1)
+                                    <span class="badge badge-primary">Active</span>
+                                    @else
+                                    <span class="badge badge-danger">InActive</span>
+                                    @endif 
+                                </td>
+                                <td>
+                                	<a href="{{url('/outlet/edit/'.$list->id)}}" class="btn btn-primary btn-sm btn-icon waves-effect waves-themed"title="Edit Outlet">
+	                                    <i class="fal fa-pencil" ></i>
 	                                </a>
-	                                <a href="{{url('/customer/delete/'.$list->id)}}" class="btn btn-primary btn-sm btn-icon waves-effect waves-themed" onclick="return confirm('Are you sure you want to delete this customer?')" title="Delete Customer">
+	                                <a href="{{url('/outlet/delete/'.$list->id)}}" class="btn btn-primary btn-sm btn-icon waves-effect waves-themed" onclick="return confirm('Are you sure you want to delete this customer?')" title="Delete Outlet">
 	                                    <i class="fal fa-trash"></i>
-	                                </a>
-	                                <a href="{{url('/customer/history/'.$list->id)}}" class="btn btn-primary btn-sm btn-icon waves-effect waves-themed" title="History Customer">
-	                                    <i class="fal fa-history"></i>
-	                                </a>
+	                                </a> 
                                 </td> 
                             </tr> 
                         	@endforeach

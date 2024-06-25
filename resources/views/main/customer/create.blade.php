@@ -5,12 +5,10 @@
         <div id="panel-2" class="panel">
             <div class="panel-hdr">
                 <h2>
-                    Customer
+                    Customer Add
                 </h2>
                 <div class="panel-toolbar">
-                    <button class="btn btn-panel" data-action="panel-collapse" data-toggle="tooltip" data-offset="0,10" data-original-title="Collapse"></button>
-                    <button class="btn btn-panel" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
-                    <button class="btn btn-panel" data-action="panel-close" data-toggle="tooltip" data-offset="0,10" data-original-title="Close"></button>
+                   <a href="{{url('/customer/list')}}" class="btn btn-sm btn-primary waves-effect waves-themed" type="submit">Customer List</a>
                 </div>
             </div>
             <div class="panel-container show"> 
@@ -46,7 +44,7 @@
                             </div> 
                         </div>
                         <div class="panel-content border-faded border-left-0 border-right-0 border-bottom-0 d-flex flex-row align-items-center justify-content-start">
-						    <button class="btn btn-primary" type="submit">Submit form</button>
+						    <button class="btn btn-primary" type="submit">Submit</button>
 						</div>
 
                     </form>
