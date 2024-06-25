@@ -21,6 +21,7 @@
         <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
         <link rel="stylesheet" media="screen, print" href="{{url('/assets/css/datagrid/datatables/datatables.bundle.css')}}">
         <!--<link rel="stylesheet" media="screen, print" href="css/your_styles.css">-->
+        <link rel="stylesheet" media="screen, print" href="{{url('/assets/css/notifications/toastr/toastr.css')}}">
     </head>
     <body class="mod-bg-1 ">
         <!-- DOC: script to save and load page settings -->
@@ -788,5 +789,7 @@
 
         </script>
         @yield('scripts')
+        <script src="{{url('/assets/js/notifications/toastr/toastr.js')}}"></script>
+         @include('scripts.toastr')
     </body>
 </html>

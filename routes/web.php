@@ -16,7 +16,12 @@ Route::post('/authenticate', [AuthController::class, 'authenticate']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/pos', [PosController::class, 'index']);
 Route::get('/outletupdate/{id}', [OutletController::class, 'outletupdate']);
+
+// category routes
 Route::get('/category/list', [CategoryController::class, 'show']);
+Route::get('/category/edit/{id}', [CategoryController::class, 'edit']);
+Route::post('/category/update/{id}', [CategoryController::class, 'update']);
+Route::get('/category/delete/{id}', [CategoryController::class, 'destroy']);
 
 // Customer route
 Route::get('/customer/list', [CustomerController::class,'index']);
