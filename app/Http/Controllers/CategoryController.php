@@ -20,7 +20,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        
+        return view('main.category.create');
     }
 
     /**
@@ -28,7 +28,22 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $request->validate([
+            'name' => 'unique:categories'
+        ]);
+
+        $userId = Auth()->id();
+
+        $data = [
+            'name' => $request->name,
+            'status' => $request->status,
+            'created_user_id' => $userId,
+        ];
+
+        Category::create($data);
+        return redirect('/category/list')
+        ->with('message','Category Add Success');
     }
 
     /**
