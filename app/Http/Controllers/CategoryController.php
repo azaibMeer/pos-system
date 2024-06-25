@@ -88,4 +88,22 @@ class CategoryController extends Controller
         return redirect('/category/list')
         ->with('message','Category Deleted Success');
     }
+
+    public function active($id)
+    {    
+        $active = Category::find($id);
+        $active->status = 1;
+        $active->save();
+        return redirect('/category/list')
+        ->with('message','Category Active Success');
+    }
+
+     public function inactive($id)
+    {    
+        $inactive = Category::find($id);
+        $inactive->status = 0;
+        $inactive->save(); 
+        return redirect('/category/list')
+        ->with('error','Category Inactive Success');
+    }
 }
