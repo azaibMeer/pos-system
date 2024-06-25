@@ -13,7 +13,7 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        $data ['customers'] = Customer::get();
+        $data ['customers'] = Customer::orderBy('id','desc')->get();
         return view('main.customer.list',$data);
     }
 
@@ -94,6 +94,6 @@ class CustomerController extends Controller
     {
         $customer = Customer::find($id); 
         $customer->delete();
-        return redirect('/customer/list')->with('message', 'Customer deleted successfully.');
+        return redirect('/customer/list')->with('error', 'Customer deleted successfully.');
     }
 }

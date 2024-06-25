@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('content') 
- <link rel="stylesheet" media="screen, print" href="{{url('assets/css/formplugins/summernote/summernote.css')}}"> 
+ <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <div class="row">
     <div class="col-xl-6"> 
         <div id="panel-2" class="panel">
@@ -48,8 +48,7 @@
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <label class="form-label" for="validationCustom03">Receipt Footer <span class="text-danger">*</span></label>
-                                   <div class="js-summernote" id="saveToLocal"></div>
-                                       <input type="hidden" name="saveToLocal" id="content-input">
+                                    <textarea id="summernote" name="receipt_footer"></textarea>
                                     <div class="invalid-feedback">
                                         Please provide a valid receipt footer.
                                     </div>
@@ -68,35 +67,8 @@
                         </div>
                         <div class="panel-content border-faded border-left-0 border-right-0 border-bottom-0 d-flex flex-row align-items-center justify-content-start">
 						    <button class="btn btn-primary" type="submit">Submit</button>
-						</div>
-
-                    </form>
-                    <script>
-                        // Example starter JavaScript for disabling form submissions if there are invalid fields
-                        (function()
-                        {
-                            'use strict';
-                            window.addEventListener('load', function()
-                            {
-                                // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                                var forms = document.getElementsByClassName('needs-validation');
-                                // Loop over them and prevent submission
-                                var validation = Array.prototype.filter.call(forms, function(form)
-                                {
-                                    form.addEventListener('submit', function(event)
-                                    {
-                                        if (form.checkValidity() === false)
-                                        {
-                                            event.preventDefault();
-                                            event.stopPropagation();
-                                        }
-                                        form.classList.add('was-validated');
-                                    }, false);
-                                });
-                            }, false);
-                        })();
-
-                    </script>
+						</div> 
+                    </form> 
                 </div>
             </div>
         </div> 
@@ -104,148 +76,14 @@
 </div> 
 @endsection
 @section('scripts')
-<script src="{{url('/assets/js/formplugins/summernote/summernote.js')}}"></script>
-<script>
-            var autoSave = $('#autoSave');
-            var interval;
-            var timer = function()
-            {
-                interval = setInterval(function()
-                {
-                    //start slide...
-                    if (autoSave.prop('checked'))
-                        saveToLocal();
-
-                    clearInterval(interval);
-                }, 3000);
-            };
-
-            //save
-            var saveToLocal = function()
-            {
-                localStorage.setItem('summernoteData', $('#saveToLocal').summernote("code"));
-                console.log("saved");
-            }
-
-            //delete 
-            var removeFromLocal = function()
-            {
-                localStorage.removeItem("summernoteData");
-                $('#saveToLocal').summernote('reset');
-            }
-
-            $(document).ready(function()
-            {
-                //init default
-                $('.js-summernote').summernote(
-                {
-                    height: 200,
-                    tabsize: 2,
-                    placeholder: "Type here...",
-                    dialogsFade: true,
-                    toolbar: [
-                        ['style', ['style']],
-                        ['font', ['strikethrough', 'superscript', 'subscript']],
-                        ['font', ['bold', 'italic', 'underline', 'clear']],
-                        ['fontsize', ['fontsize']],
-                        ['fontname', ['fontname']],
-                        ['color', ['color']],
-                        ['para', ['ul', 'ol', 'paragraph']],
-                        ['height', ['height']]
-                        ['table', ['table']],
-                        ['insert', ['link', 'picture', 'video']],
-                        ['view', ['fullscreen', 'codeview', 'help']]
-                    ],
-                    callbacks:
-                    {
-                        //restore from localStorage
-                        onInit: function(e)
-                        {
-                            $('.js-summernote').summernote("code", localStorage.getItem("summernoteData"));
-                        },
-                        onChange: function(contents, $editable)
-                        {
-                            clearInterval(interval);
-                            timer();
-                        }
-                    }
-                });
-
-                //load emojis
-                $.ajax(
-                {
-                    url: 'https://api.github.com/emojis',
-                    async: false
-                }).then(function(data)
-                {
-                    window.emojis = Object.keys(data);
-                    window.emojiUrls = data;
-                });
-
-                //init emoji example
-                $(".js-hint2emoji").summernote(
-                {
-                    height: 100,
-                    toolbar: false,
-                    placeholder: 'type starting with : and any alphabet',
-                    hint:
-                    {
-                        match: /:([\-+\w]+)$/,
-                        search: function(keyword, callback)
-                        {
-                            callback($.grep(emojis, function(item)
-                            {
-                                return item.indexOf(keyword) === 0;
-                            }));
-                        },
-                        template: function(item)
-                        {
-                            var content = emojiUrls[item];
-                            return '<img src="' + content + '" width="20" /> :' + item + ':';
-                        },
-                        content: function(item)
-                        {
-                            var url = emojiUrls[item];
-                            if (url)
-                            {
-                                return $('<img />').attr('src', url).css('width', 20)[0];
-                            }
-                            return '';
-                        }
-                    }
-                });
-
-                //init mentions example
-                $(".js-hint2mention").summernote(
-                {
-                    height: 100,
-                    toolbar: false,
-                    placeholder: "type starting with @",
-                    hint:
-                    {
-                        mentions: ['jayden', 'sam', 'alvin', 'david'],
-                        match: /\B@(\w*)$/,
-                        search: function(keyword, callback)
-                        {
-                            callback($.grep(this.mentions, function(item)
-                            {
-                                return item.indexOf(keyword) == 0;
-                            }));
-                        },
-                        content: function(item)
-                        {
-                            return '@' + item;
-                        }
-                    }
-                });
-
-            });
-             
-    $(document).ready(function() { 
-
-        $('form').on('submit', function() {
-            $('#content-input').val($('.js-summernote').summernote('code'));
-        });
-    }); 
-        </script>
+<!-- <script src="{{url('/assets/js/formplugins/summernote/summernote.js')}}"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script src="{{url('assets/js/formvalidation/validation.js')}}"></script>
+ <script>
+      $('#summernote').summernote({
+        placeholder: '',
+        tabsize: 2,
+        height: 200
+      });
+</script> 
 @endsection

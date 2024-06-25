@@ -13,7 +13,7 @@ class OutletController extends Controller
      */
     public function index()
     {
-         $data ['outlets'] = Outlet::get();
+         $data ['outlets'] = Outlet::orderBy('id','desc')->get();
         return view('main.outlet.list',$data);
     }
 
@@ -47,7 +47,7 @@ class OutletController extends Controller
          $outlet->address = $request->address;
          $outlet->contact_number = $request->contact_number; 
          $outlet->receipt_header = $request->receipt_header; 
-         $outlet->receipt_footer = $request->saveToLocal; 
+         $outlet->receipt_footer = $request->receipt_footer; 
          $outlet->created_user_id = auth()->id();
          $outlet->status = $request->status; 
          $outlet->save(); 
@@ -79,14 +79,17 @@ class OutletController extends Controller
     {
         $request->validate([
             'name' => 'required', 
-            'phone' => 'required', 
+            'contact_number' => 'required', 
            ]);
 
          $outlet = Outlet::find($id); 
          $outlet->name = $request->name;
-         $outlet->email = $request->email;
-         $outlet->phone = $request->phone; 
+         $outlet->address = $request->address;
+         $outlet->contact_number = $request->contact_number; 
+         $outlet->receipt_header = $request->receipt_header; 
+         $outlet->receipt_footer = $request->receipt_footer; 
          $outlet->created_user_id = auth()->id();
+         $outlet->status = $request->status; 
          $outlet->save(); 
 
          return redirect(url('/outlet/list'))->with('message', 'Outlet update successfully.'); 
@@ -99,6 +102,6 @@ class OutletController extends Controller
     {
         $outlet = Outlet::find($id); 
         $outlet->delete();
-        return redirect('/outlet/list')->with('message', 'Outlet deleted successfully.');
+        return redirect('/outlet/list')->with('error', 'Outlet deleted successfully.');
     }
 }

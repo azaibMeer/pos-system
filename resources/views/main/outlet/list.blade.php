@@ -32,7 +32,7 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$list->name}}</td>
                                 <td>{{$list->address}}</td>
-                                <td>{{$list->phone}}</td>
+                                <td>{{$list->contact_number}}</td>
                                 <td>
                                     @if($list->status == 1)
                                     <span class="badge badge-primary">Active</span>
@@ -44,7 +44,7 @@
                                 	<a href="{{url('/outlet/edit/'.$list->id)}}" class="btn btn-primary btn-sm btn-icon waves-effect waves-themed"title="Edit Outlet">
 	                                    <i class="fal fa-pencil" ></i>
 	                                </a>
-	                                <a href="{{url('/outlet/delete/'.$list->id)}}" class="btn btn-primary btn-sm btn-icon waves-effect waves-themed" onclick="return confirm('Are you sure you want to delete this customer?')" title="Delete Outlet">
+	                                <a href="{{url('/outlet/delete/'.$list->id)}}" class="btn btn-primary btn-sm btn-icon waves-effect waves-themed" onclick="return confirm('Are you sure you want to delete this oulet?')" title="Delete Outlet">
 	                                    <i class="fal fa-trash"></i>
 	                                </a> 
                                 </td> 
