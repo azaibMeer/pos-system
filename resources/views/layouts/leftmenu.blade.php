@@ -30,19 +30,24 @@
                         </div>
                         <ul id="js-nav-menu" class="nav-menu">    
                             <li>
-                                <a href="#" title="Tables" data-filter-tags="tables">
+                                <a href="#" title="Product">
                                     <i class="fal fa-th-list"></i>
-                                    <span class="nav-link-text" data-i18n="nav.tables">Products</span>
+                                    <span class="nav-link-text">Products</span>
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="{{url('/category/list')}}" title="Basic Tables">
+                                        <a href="{{url('/category/list')}}" title="product category">
                                             <span class="nav-link-text" >Product Category</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{url('/product/list')}}" title="Basic Tables">
-                                            <span class="nav-link-text" >Product List</span>
+                                        <a href="{{url('/product/list')}}" title="product">
+                                            <span class="nav-link-text" >Product</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('/attribute/list')}}" title="attribute">
+                                            <span class="nav-link-text" >Attribute</span>
                                         </a>
                                     </li>
                                 </ul>
