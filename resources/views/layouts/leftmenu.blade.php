@@ -40,7 +40,11 @@
                                             <span class="nav-link-text" >Product Category</span>
                                         </a>
                                     </li>
-                                    
+                                    <li>
+                                        <a href="{{url('/product/list')}}" title="Basic Tables">
+                                            <span class="nav-link-text" >Product List</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="{{ request()->is('customer*') ? 'active' : '' }}">
