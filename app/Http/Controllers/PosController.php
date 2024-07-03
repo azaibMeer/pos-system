@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Outlet;
+use App\Models\Customer;
 
 class PosController extends Controller
 {
@@ -12,8 +13,11 @@ class PosController extends Controller
      */
     public function index()
     {
+        // dd();
         if(session()->has('outlet_id')){
-            return view('main.pos');
+            $data['customers'] = Customer::get();
+             // $data['customers'] = json_decode($customers);
+            return view('main.pos',$data);
         }else{
 
             $data['outlets'] = Outlet::where('status', 1)->get();
@@ -69,5 +73,12 @@ class PosController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+     public function search(Request $request)
+    {
+        $query = $request->input('query');
+        $customers = Customer::where('name', 'LIKE', "%{$query}%")->orWhere('phone', 'LIKE', "%{$query}%")->get();
+        return response()->json($customers);
     }
 }

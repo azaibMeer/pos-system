@@ -15,6 +15,8 @@ Route::get('/', [AuthController::class, 'create']);
 Route::post('/authenticate', [AuthController::class, 'authenticate']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/pos', [PosController::class, 'index']);
+Route::get('/search', [PosController::class, 'search']);
+
 Route::get('/outletupdate/{id}', [OutletController::class, 'outletupdate']);
 
 // Category routes

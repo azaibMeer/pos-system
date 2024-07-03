@@ -29,13 +29,13 @@
                             <img src="/assets/img/card-backgrounds/cover-2-lg.png" class="cover" alt="cover">
                         </div>
                         <ul id="js-nav-menu" class="nav-menu">    
-                            <li>
+                            <li class="{{ request()->is('category*') ? 'active' : '' }}">
                                 <a href="#" title="Tables" data-filter-tags="tables">
                                     <i class="fal fa-th-list"></i>
                                     <span class="nav-link-text" data-i18n="nav.tables">Products</span>
                                 </a>
                                 <ul>
-                                    <li>
+                                    <li class="{{ request()->is('category*') ? 'active' : '' }}">
                                         <a href="{{url('/category/list')}}" title="Basic Tables">
                                             <span class="nav-link-text" >Product Category</span>
                                         </a>

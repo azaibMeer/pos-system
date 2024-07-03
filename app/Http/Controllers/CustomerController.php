@@ -32,10 +32,10 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+         // dd($request->expectsJson());
         $request->validate([
-            'name' => 'required', 
-            'phone' => 'required', 
+            'name' => 'required',  
+            'phone' => 'required|unique:customers', 
            ]);
 
          $customer = new Customer; 
@@ -44,6 +44,9 @@ class CustomerController extends Controller
          $customer->phone = $request->phone; 
          $customer->created_user_id = auth()->id();
          $customer->save(); 
+
+         if ($request->expectsJson())  
+           return response()->json(['message' => 'Customer added successfully.']); 
 
          return redirect(url('/customer/list'))->with('message', 'Customer add successfully.'); 
 
@@ -73,8 +76,9 @@ class CustomerController extends Controller
     {
          // dd($request);
         $request->validate([
-            'name' => 'required', 
-            'phone' => 'required', 
+            'name' => 'required|unique:customers', 
+            'email' => 'required|unique:customers', 
+            'phone' => 'required|unique:customers', 
            ]);
 
          $customer = Customer::find($id); 

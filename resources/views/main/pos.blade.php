@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -6,6 +6,7 @@
             List - Page Views - SmartAdmin v4.4.1
         </title>
         <meta name="description" content="List">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
         <!-- Call App Mode on ios devices -->
@@ -20,6 +21,7 @@
         <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
         <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
         <link rel="stylesheet" media="screen, print" href="{{url('/assets/css/formplugins/select2/select2.bundle.css')}}">
+        <link rel="stylesheet" media="screen, print" href="{{url('/assets/css/notifications/toastr/toastr.css')}}">
         <style>
             .circle-btn {
                 width: 17px;
@@ -45,6 +47,20 @@
       padding: 15px;
      
     }
+
+         
+    .text-card {
+        cursor: pointer;
+        border: 1px solid #ccc;
+        
+    }
+    .text-card:hover {
+        background-color: #1dc9b7; /* Example hover effect */
+    }
+    .text-card:hover h5,
+    .text-card:hover p {
+        color: white; /* Change text color to white on hover */
+    } 
         </style>
         
     </head>
@@ -206,159 +222,159 @@
                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
                                           </div>
-                                          <div class="col-md-3">
+                                           <div class="col-md-3">
                                             
                                             <div class="text-card mt-4">
-                                                <img src="https://th.bing.com/th/id/OIP.cbExHEBoI5yiZc9_WtzJ-gHaFW?rs=1&pid=ImgDetMain" alt="" style="width:98px">
+                                                <img src="https://png.pngtree.com/png-vector/20230417/ourmid/pngtree-food-toast-burger-png-image_6712843.png" alt="" style="width:71px; display: block; margin: 0 auto;">
                                                 <h5 style="font-size: 12px;text-align: left;">Small and adapti tag for adding</h5>
                                                 <p style="font-size: 10px;" class="mb-0">Quantity: 10</p>
                                               </div>
@@ -371,22 +387,77 @@
                                 </div>
                                
                             </div>
-                            
+                            <style type="text/css">
+                                /* Style the search input */
+/* Style the search input */
+/*.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+}*/
+
+ 
+
+/* Style the search input */
+#searchInput {
+    width: 100%;
+    padding: 9px;
+    box-sizing: border-box;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+}
+
+/* Style the dropdown list */
+.select-items {
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #1e90ff;
+    width: calc(100% - 2px); /* Adjust width for border */
+    top: 100%; /* Position below the input */
+    left: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 99;
+    display: none; /* Hide by default */
+}
+
+/* Style each dropdown item */
+.select-items div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Hover effect on dropdown items */
+.select-items div:hover {
+    background-color: #1e90ff;
+    color: white;
+}
+
+/* Display the dropdown when active */
+.select-items.active {
+    display: block;
+}
+
+.no-results {
+    padding: 10px;
+    color: #666;
+}
+                            </style>
                             <div class="col-lg-6">
                                 <form action="">
                                 <div class="row">
                                     <div class="form-group col-lg-8 pl-0 mb-2">
-                                        <select class="select2 form-control w-100" id="single-default">
-                                            <optgroup label="Alaskan/Hawaiian Time Zone">
-                                                <option value="AK">Alaska</option>
-                                                <option value="HI">Hawaii</option>
-                                            </optgroup>
-                                            
-                                        </select>
+                                        <div class="custom-selects">
+        <input type="text" id="searchInput" placeholder="Search..." autocomplete="off">
+        <div id="dropdown" class="select-items select-hide"></div>
+    </div>
                                         </div>
                                         <div class="col-lg-4 pl-0">
-                                            <button type="button" class="btn btn-primary waves-effect waves-themed btn-block">Add Customer</button>
+                                            <button type="button" class="btn btn-primary waves-effect waves-themed btn-block" data-toggle="modal" data-target="#default-example-modal">Add Customer</button>
                                         </div>
+                                        <!-- Modal -->
+                                         @include('main.modal.customer')
+                                        <!-- End Modal -->
                                         <div id="" class="pl-0 col-lg-12">
                                            
                                                 <div class="card mb-2 border shadow-0">
@@ -731,12 +802,77 @@
         <script>
             $(document).ready(function()
             {
-                $(function()
-                {
-                    $('.select2').select2();
-                });
+                
             });
+                     // var customers = <?php echo json_encode($customers); ?>;
+
+document.addEventListener("DOMContentLoaded", function() {
+    var searchInput = document.getElementById("searchInput");
+    var dropdown = document.getElementById("dropdown");
+    var noResultsMessage = document.createElement("div");
+    noResultsMessage.textContent = "No results found";
+    noResultsMessage.classList.add("no-results");
+    var uniqueResults = new Set(); // Set to store unique results
+
+    searchInput.addEventListener("input", function() {
+        var query = this.value.toLowerCase().trim();
+        console.log("Search query:", query);  // Debugging statement
+        dropdown.innerHTML = "";
+        uniqueResults.clear();  // Clear unique results for fresh search
+
+        if (query.length > 0) {
+            // Perform AJAX request to search.php
+            fetch(`/search?query=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Filtered customers:", data);  // Debugging statement
+
+                    data.forEach(function(customer) {
+                        var customerText = customer.name + ' (' + customer.phone + ')';
+
+                        // Check if customerText is already in uniqueResults
+                        if (!uniqueResults.has(customerText)) {
+                            uniqueResults.add(customerText);
+
+                            var div = document.createElement("div");
+                            div.textContent = customerText;
+                            div.addEventListener("click", function() {
+                                searchInput.value = customerText;
+                                dropdown.classList.remove("active");
+                                dropdown.innerHTML = '';  // Clear the dropdown when an item is selected
+                            });
+                            dropdown.appendChild(div);
+                        }
+                    });
+
+                    if (uniqueResults.size > 0) {
+                        dropdown.classList.add("active");
+                    } else {
+                        dropdown.appendChild(noResultsMessage);
+                        dropdown.classList.remove("active");
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        } else {
+            dropdown.classList.remove("active");
+            dropdown.innerHTML = ""; // Clear the dropdown when the input is empty
+        }
+    });
+
+    document.addEventListener("click", function(event) {
+        if (!searchInput.contains(event.target) && !dropdown.contains(event.target)) {
+            dropdown.classList.remove("active");
+        }
+    });
+});
+
+
+
+
+
 
         </script>
+        <script src="{{url('/assets/js/notifications/toastr/toastr.js')}}"></script> 
+        @yield('scripts') 
     </body>
 </html>

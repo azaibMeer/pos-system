@@ -22,17 +22,12 @@
                                     <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
                                     <div class="invalid-feedback">
                                         Please provide a valid name.
-                                    </div>
+                                    </div> 
                                 </div> 
                                 <div class="col-md-4 mb-3">
                                     <label class="form-label" for="validationCustomUsername">Email <span class="text-danger">*</span></label>
-                                    <div class="input-group">
-                                         
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" aria-describedby="inputGroupPrepend" required>
-                                        <div class="invalid-feedback">
-                                             Please provide a valid email.
-                                        </div>
-                                    </div>
+                                                                           
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" aria-describedby="inputGroupPrepend" > 
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label class="form-label" for="validationCustom03">Phone <span class="text-danger">*</span></label>
@@ -40,6 +35,11 @@
                                     <div class="invalid-feedback">
                                         Please provide a valid phone.
                                     </div>
+                                    @error('phone')
+                                        <div class="text-danger">
+                                            Phone already exists
+                                        </div>
+                                    @enderror
                                 </div>
                             </div> 
                         </div>
