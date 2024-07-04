@@ -1,7 +1,7 @@
 @if(isset(Auth::User()->user_type) && Auth::User()->user_type == 1)
 <aside class="page-sidebar">
                     <div class="page-logo">
-                        <a href="#" class="page-logo-link press-scale-down d-flex align-items-center position-relative" data-toggle="modal" data-target="#modal-shortcut">
+                        <a href="{{url('/pos')}}" class="page-logo-link press-scale-down d-flex align-items-center position-relative"   data-target="#modal-shortcut">
                             <img src="{{url($setting->logo)}}" alt="{{$setting->name}}" aria-roledescription="logo">
                             <span class="page-logo-text mr-1">{{$setting->name ?? ''}}</span>
                         </a>
@@ -29,27 +29,23 @@
                             <img src="/assets/img/card-backgrounds/cover-2-lg.png" class="cover" alt="cover">
                         </div>
                         <ul id="js-nav-menu" class="nav-menu">    
-                            <li class="{{ request()->is('category*') ? 'active' : '' }}">
-                                <a href="#" title="Tables" data-filter-tags="tables">
-                            <li>
-                                <a href="#" title="Product">
-                                    <i class="fal fa-th-list"></i>
-                                    <span class="nav-link-text">Products</span>
+                             <li class="{{ request()->is('category*') || request()->is('product*') || request()->is('attribute*') || request()->is('add/attribute/value*') ? 'active' : '' }}" >
+                                <a href="#" title="Application Intel" data-filter-tags="application intel">
+                                    <i class="fal fa-info-circle"></i>
+                                    <span class="nav-link-text" data-i18n="nav.application_intel">Products</span>
                                 </a>
-                                <ul>
+                                <ul> 
                                     <li class="{{ request()->is('category*') ? 'active' : '' }}">
-                                        <a href="{{url('/category/list')}}" title="Basic Tables">
-                                    <li>
                                         <a href="{{url('/category/list')}}" title="product category">
                                             <span class="nav-link-text" >Product Category</span>
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="{{ request()->is('product*') ? 'active' : '' }}">
                                         <a href="{{url('/product/list')}}" title="product">
                                             <span class="nav-link-text" >Product</span>
                                         </a>
                                     </li>
-                                    <li>
+                                    <li class="{{ request()->is('attribute*') ? 'active' : '' }}">
                                         <a href="{{url('/attribute/list')}}" title="attribute">
                                             <span class="nav-link-text" >Attribute</span>
                                         </a>

@@ -132,7 +132,7 @@
                 <div class="page-content-wrapper">
                     <!-- BEGIN Page Header -->
                     <header class="page-header" role="banner">
-                       <div style="font-size: medium;">XANDER </div>
+                       <div style="font-size: medium;">POS System </div>
                         <div class="ml-auto d-flex">
                           
                             <div>
@@ -480,11 +480,11 @@
                                                                     
                                                                         <td>
                                                                             <div class="d-flex align-items-center">
-                                                                                <a href="#" class="circle-btn">
+                                                                                <a href="#" class="circle-btn decrement-btn">
                                                                                     <i class="fal fa-minus text-black"></i>
                                                                                 </a>
                                                                                 <input type="text" class="quantity__input form-control form-control-sm text-center mx-2" value="1" style="width: 50px;">
-                                                                                <a href="#" class="circle-btn">
+                                                                                <a href="#" class="circle-btn increment-btn">
                                                                                     <i class="fal fa-plus text-black"></i>
                                                                                 </a>
                                                                             </div>
@@ -511,11 +511,11 @@
                                                                     
                                                                         <td>
                                                                             <div class="d-flex align-items-center">
-                                                                                <a href="#" class="circle-btn">
+                                                                                <a href="#" class="circle-btn decrement-btn">
                                                                                     <i class="fal fa-minus text-black"></i>
                                                                                 </a>
                                                                                 <input type="text" class="quantity__input form-control form-control-sm text-center mx-2" value="1" style="width: 50px;">
-                                                                                <a href="#" class="circle-btn">
+                                                                                <a href="#" class="circle-btn increment-btn">
                                                                                     <i class="fal fa-plus text-black"></i>
                                                                                 </a>
                                                                             </div>
@@ -542,11 +542,11 @@
                                                                     
                                                                         <td>
                                                                             <div class="d-flex align-items-center">
-                                                                                <a href="#" class="circle-btn">
+                                                                                <a href="#" class="circle-btn decrement-btn">
                                                                                     <i class="fal fa-minus text-black"></i>
                                                                                 </a>
                                                                                 <input type="text" class="quantity__input form-control form-control-sm text-center mx-2" value="1" style="width: 50px;">
-                                                                                <a href="#" class="circle-btn">
+                                                                                <a href="#" class="circle-btn increment-btn">
                                                                                     <i class="fal fa-plus text-black"></i>
                                                                                 </a>
                                                                             </div>
@@ -573,11 +573,11 @@
                                                                     
                                                                         <td>
                                                                             <div class="d-flex align-items-center">
-                                                                                <a href="#" class="circle-btn">
+                                                                                <a href="#" class="circle-btn decrement-btn">
                                                                                     <i class="fal fa-minus text-black"></i>
                                                                                 </a>
                                                                                 <input type="text" class="quantity__input form-control form-control-sm text-center mx-2" value="1" style="width: 50px;">
-                                                                                <a href="#" class="circle-btn">
+                                                                                <a href="#" class="circle-btn increment-btn">
                                                                                     <i class="fal fa-plus text-black"></i>
                                                                                 </a>
                                                                             </div>
@@ -604,11 +604,11 @@
                                                                     
                                                                         <td>
                                                                             <div class="d-flex align-items-center">
-                                                                                <a href="#" class="circle-btn">
+                                                                                <a href="#" class="circle-btn decrement-btn">
                                                                                     <i class="fal fa-minus text-black"></i>
                                                                                 </a>
                                                                                 <input type="text" class="quantity__input form-control form-control-sm text-center mx-2" value="1" style="width: 50px;">
-                                                                                <a href="#" class="circle-btn">
+                                                                                <a href="#" class="circle-btn increment-btn">
                                                                                     <i class="fal fa-plus text-black"></i>
                                                                                 </a>
                                                                             </div>
@@ -635,11 +635,11 @@
                                                                     
                                                                         <td>
                                                                             <div class="d-flex align-items-center">
-                                                                                <a href="#" class="circle-btn">
+                                                                                <a href="#" class="circle-btn decrement-btn">
                                                                                     <i class="fal fa-minus text-black"></i>
                                                                                 </a>
                                                                                 <input type="text" class="quantity__input form-control form-control-sm text-center mx-2" value="1" style="width: 50px;">
-                                                                                <a href="#" class="circle-btn">
+                                                                                <a href="#" class="circle-btn increment-btn">
                                                                                     <i class="fal fa-plus text-black"></i>
                                                                                 </a>
                                                                             </div>
@@ -666,18 +666,16 @@
                                                                     
                                                                         <td>
                                                                             <div class="d-flex align-items-center">
-                                                                                <a href="#" class="circle-btn">
+                                                                                <a href="#" class="circle-btn decrement-btn">
                                                                                     <i class="fal fa-minus text-black"></i>
                                                                                 </a>
                                                                                 <input type="text" class="quantity__input form-control form-control-sm text-center mx-2" value="1" style="width: 50px;">
-                                                                                <a href="#" class="circle-btn">
+                                                                                <a href="#" class="circle-btn increment-btn">
                                                                                     <i class="fal fa-plus text-black"></i>
                                                                                 </a>
                                                                             </div>
                                                                         </td>
-                                                                        
-                                                                  
-                                                                    
+                                                                         
                                                                     <td>
                                                                         <div class="input-group input-group-sm">
                                                                             <input type="text" class="quantity__input form-control form-control-sm" value="1">
@@ -800,9 +798,25 @@
         </script>
          <script src="{{url('/assets/js/formplugins/select2/select2.bundle.js')}}"></script>
         <script>
-            $(document).ready(function()
-            {
-                
+            $(document).ready(function(){
+                  // Event listener for increment button
+                $('.increment-btn').click(function(e) {
+                    e.preventDefault();
+                    var quantityInput = $(this).siblings('.quantity__input');
+                    var currentValue = parseInt(quantityInput.val());
+                    quantityInput.val(currentValue + 1);
+                });
+
+                // Event listener for decrement button
+                $('.decrement-btn').click(function(e) {
+                    e.preventDefault();
+                    var quantityInput = $(this).siblings('.quantity__input');
+                    var currentValue = parseInt(quantityInput.val());
+                    // Ensure the value doesn't go below 1
+                    if (currentValue > 1) {
+                        quantityInput.val(currentValue - 1);
+                    }
+                });
             });
                      // var customers = <?php echo json_encode($customers); ?>;
 

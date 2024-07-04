@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>
-            Page Titile - category_1 - SmartAdmin v4.4.1
+            POS 
         </title>
         <meta name="description" content="Page Titile">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
