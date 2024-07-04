@@ -31,16 +31,29 @@
                         <ul id="js-nav-menu" class="nav-menu">    
                             <li class="{{ request()->is('category*') ? 'active' : '' }}">
                                 <a href="#" title="Tables" data-filter-tags="tables">
+                            <li>
+                                <a href="#" title="Product">
                                     <i class="fal fa-th-list"></i>
-                                    <span class="nav-link-text" data-i18n="nav.tables">Products</span>
+                                    <span class="nav-link-text">Products</span>
                                 </a>
                                 <ul>
                                     <li class="{{ request()->is('category*') ? 'active' : '' }}">
                                         <a href="{{url('/category/list')}}" title="Basic Tables">
+                                    <li>
+                                        <a href="{{url('/category/list')}}" title="product category">
                                             <span class="nav-link-text" >Product Category</span>
                                         </a>
                                     </li>
-                                    
+                                    <li>
+                                        <a href="{{url('/product/list')}}" title="product">
+                                            <span class="nav-link-text" >Product</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url('/attribute/list')}}" title="attribute">
+                                            <span class="nav-link-text" >Attribute</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="{{ request()->is('customer*') ? 'active' : '' }}">

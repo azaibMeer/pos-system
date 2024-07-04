@@ -7,6 +7,8 @@ use App\Http\Controllers\PosController;
 use App\Http\Controllers\OutletController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AttributeController;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -28,6 +30,21 @@ Route::get('/category/add/', [CategoryController::class, 'create']);
 Route::post('/category/store/', [CategoryController::class, 'store']);
 Route::get('/category/active/{id}', [CategoryController::class, 'active']);
 Route::get('/category/inactive/{id}', [CategoryController::class, 'inactive']);
+
+// end category routes 
+
+// product routes 
+Route::get('/product/list', [ProductController::class, 'show']);
+Route::get('/product/add', [ProductController::class, 'create']);
+Route::post('/product/store', [ProductController::class, 'store']);
+
+// attribute routes // 
+
+Route::get('/attribute/list', [AttributeController::class, 'show']);
+Route::get('/attribute/add', [AttributeController::class, 'create']);
+Route::post('/attribute/store/', [AttributeController::class, 'store']);
+Route::get('add/attribute/value', [AttributeController::class, 'attribute_value_create']);
+Route::post('/attribute/value/store', [AttributeController::class, 'attribute_value_store']);
 
 // Customer route
 Route::get('/customer/list', [CustomerController::class,'index']);

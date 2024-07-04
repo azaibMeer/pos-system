@@ -22,6 +22,7 @@
         <link rel="stylesheet" media="screen, print" href="{{url('/assets/css/datagrid/datatables/datatables.bundle.css')}}">
         <!--<link rel="stylesheet" media="screen, print" href="css/your_styles.css">-->
         <link rel="stylesheet" media="screen, print" href="{{url('/assets/css/notifications/toastr/toastr.css')}}">
+        <link rel="stylesheet" media="screen, print" href="{{url('/assets/css/formplugins/select2/select2.bundle.css')}}">
     </head>
     <body class="mod-bg-1 ">
         <!-- DOC: script to save and load page settings -->
