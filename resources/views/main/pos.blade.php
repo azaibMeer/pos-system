@@ -743,7 +743,7 @@
                                                     <div class="row mt-2">
                                                         <div class="col-md-6 mb-3 ">
                                                           <div class="form-group">
-                                                            <button type="button" class="btn btn-danger waves-effect waves-themed btn-block">Cancil</button>
+                                                            <button type="button" class="btn btn-danger waves-effect waves-themed btn-block">Cancel</button>
                                         
                                                           </div>
                                                         </div>
